@@ -5,6 +5,25 @@
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
+      transition-duration: 0ms;
+
+      li {
+        opacity: 1;
+        transform: translateY(0);
+        transition-duration: 400ms;
+
+        &:nth-child(1) {
+          transition-delay: 0ms;
+        }
+
+        &:nth-child(2) {
+          transition-delay: 100ms;
+        }
+
+        &:nth-child(3) {
+          transition-delay: 200ms;
+        }
+      }
     }
   }
 }
@@ -17,6 +36,9 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition-property: color;
+  transition-duration: 350ms;
+  transition-timing-function: ease;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +57,9 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition-property: all;
+    transition-duration: 350ms;
+    transition-timing-function: ease;
   }
 
   svg {
@@ -65,6 +90,25 @@
     & + .social-block__list {
       opacity: 1;
       pointer-events: auto;
+      transition-duration: 0ms;
+
+      li {
+        opacity: 1;
+        transform: translateY(0);
+        transition-duration: 400ms;
+
+        &:nth-child(1) {
+          transition-delay: 0ms;
+        }
+
+        &:nth-child(2) {
+          transition-delay: 100ms;
+        }
+
+        &:nth-child(3) {
+          transition-delay: 200ms;
+        }
+      }
     }
   }
 
@@ -89,6 +133,9 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition-property: opacity;
+  transition-duration: 350ms;
+  transition-timing-function: ease;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -130,21 +177,84 @@
   &:hover {
     opacity: 1;
     pointer-events: auto;
+    transition-duration: 0ms;
+
+    li {
+      opacity: 1;
+      transform: translateY(0);
+      transition-duration: 400ms;
+
+      &:nth-child(1) {
+        transition-delay: 0ms;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 100ms;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 200ms;
+      }
+    }
   }
 
   &:focus-within {
     opacity: 1;
     pointer-events: auto;
+    transition-duration: 0ms;
+
+    li {
+      opacity: 1;
+      transform: translateY(0);
+      transition-duration: 400ms;
+
+      &:nth-child(1) {
+        transition-delay: 0ms;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 100ms;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 200ms;
+      }
+    }
   }
 
   .social-block--active & {
     opacity: 1;
     pointer-events: auto;
+    transition-duration: 0ms;
+
+    li {
+      opacity: 1;
+      transform: translateY(0);
+      transition-duration: 400ms;
+
+      &:nth-child(1) {
+        transition-delay: 0ms;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 100ms;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 200ms;
+      }
+    }
   }
 
   li {
     flex: none;
     margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition-property: all;
+    transition-duration: 0ms;
+    transition-timing-function: ease;
+    transition-delay: 350ms;
 
     @media (min-width: $stop-scaling) {
       margin-bottom: 5px;
@@ -168,6 +278,9 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transition-property: color;
+  transition-duration: 350ms;
+  transition-timing-function: ease;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
