@@ -185,4 +185,29 @@
 
 .chat__footer {
   margin-top: auto;
+
+  & .form__field {
+    animation-name: showField;
+    animation-duration: 600ms;
+    animation-delay: 100ms;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes showField {
+  0% {
+    width: 0;
+    padding: 0 3.6rem;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    width: calc(100% - 21rem);
+    padding: 0 5.6rem;
+  }
 }
