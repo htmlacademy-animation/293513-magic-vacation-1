@@ -7,6 +7,14 @@
     min-height: 100vh;
     box-sizing: border-box;
 
+    & .swiper-slide-active .slider__item-text {
+      @include fadeInRight(500ms, 40px, 0, 200ms);
+    }
+
+    & .swiper-slide-next .slider__item-text {
+      @include fadeInRight(800ms, 40px, 0, 600ms);
+    }
+
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(var(--vh, 1vh) * 100);
     }
