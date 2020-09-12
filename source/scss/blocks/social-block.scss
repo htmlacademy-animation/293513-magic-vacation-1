@@ -50,6 +50,7 @@
 
   &::before {
     @include center;
+    transform: translate(-50%, -50%) scale(0);
     content: "";
     width: 100%;
     height: 100%;
@@ -60,6 +61,31 @@
     transition-property: all;
     transition-duration: 350ms;
     transition-timing-function: ease;
+  }
+
+  .body--loaded & {
+    @keyframes ball {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+      }
+
+      60% {
+        transform: translate(-50%, -50%) scale(1.15);
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+      animation-name: ball;
+      animation-duration: 350ms;
+      animation-delay: 400ms;
+      animation-timing-function: $tf-easeOut;
+      animation-fill-mode: both;
+    }
   }
 
   svg {
