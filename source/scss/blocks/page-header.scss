@@ -35,6 +35,17 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition-property: transform, opacity;
+  transition-duration: 350ms;
+  transition-timing-function: ease;
+  transition-delay: 200ms;
+
+  .body--loaded & {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -177,6 +188,15 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 350ms;
+  transition-timing-function: $tf-easeOut;
+  transition-delay: 300ms;
+
+  .body--loaded & {
+    opacity: 1;
+  }
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -272,9 +292,13 @@
       }
     }
 
-    &.active {
-      &::after {
-        transform: scaleX(1);
+    .body--loaded & {
+      &.active {
+        &::after {
+          transform-origin: left;
+          transform: scaleX(1);
+          transition-delay: 350ms;
+        }
       }
     }
 
