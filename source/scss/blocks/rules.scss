@@ -124,6 +124,27 @@
   padding-left: 6.5rem;
   break-inside: avoid;
 
+  @keyframes scaleOpacity {
+    0% {
+      color: transparent;
+      transform: scale(0);
+    }
+
+    50% {
+      color: transparent;
+      transform: scale(1.1);
+    }
+
+    90% {
+      color: #ffffff;
+    }
+
+    100% {
+      color: #ffffff;
+      transform: scale(1);
+    }
+  }
+
   @media (min-width: $stop-scaling) {
     margin: 0 0 62px;
     padding-top: 6px;
@@ -159,6 +180,10 @@
     border-radius: 50%;
     line-height: 5rem;
     text-align: center;
+    animation-name: scaleOpacity;
+    animation-duration: 600ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -179,10 +204,43 @@
 
   p {
     margin: 0;
+    animation-timing-function: ease-out;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
     }
+  }
+
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i})::before {
+      animation-delay: $i * 350ms;
+    }
+
+    &:nth-child(#{$i}) p {
+      @include fadeInRight(400ms, 30px, 0, #{$i * 400}ms);
+    }
+  }
+}
+
+@keyframes showLink {
+  0% {
+    width: 7rem;
+    color: transparent;
+    opacity: 0;
+  }
+
+  30% {
+    color: transparent;
+    opacity: 1;
+  }
+
+  50% {
+    width: 18rem;
+    color: transparent;
+  }
+
+  100% {
+    color: $c-dark;
   }
 }
 
@@ -190,6 +248,14 @@
   position: absolute;
   bottom: 6rem;
   right: 5.6rem;
+  animation-name: showLink;
+  animation-duration: 600ms;
+  animation-timing-function: ease;
+  animation-play-state: paused;
+
+  &.active {
+    animation-play-state: running;
+  }
 
   @media (min-width: $stop-scaling) {
     bottom: 60px;
