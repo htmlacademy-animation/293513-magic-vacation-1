@@ -224,7 +224,6 @@
 
 @keyframes showLink {
   0% {
-    width: 7rem;
     color: transparent;
     opacity: 0;
   }
@@ -232,11 +231,6 @@
   30% {
     color: transparent;
     opacity: 1;
-  }
-
-  50% {
-    width: 18rem;
-    color: transparent;
   }
 
   100% {
@@ -253,8 +247,21 @@
   animation-timing-function: ease;
   animation-play-state: paused;
 
+  &::before {
+    top: 0;
+    right: 0;
+    left: auto;
+    width: 40%;
+    transform: none;
+    transition: width 350ms ease;
+  }
+
   &.active {
     animation-play-state: running;
+
+    &::before {
+      width: 100%;
+    }
   }
 
   @media (min-width: $stop-scaling) {
