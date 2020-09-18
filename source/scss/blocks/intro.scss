@@ -152,6 +152,8 @@
   font-size: 2.4rem;
   line-height: 1.2;
 
+  @include fade(450ms, 1300ms);
+
   @media (min-width: $stop-scaling) {
     margin: 0 0 16px;
     width: 250px;
@@ -166,6 +168,15 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+
+  & .text__word > span {
+    padding-top: 0.1em;
+    padding-right: 0.04em;
+  }
+
+  &.active .text__word > span {
+    transform: translate3d(0, 0, 0);
+  }
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 0 -5px;
