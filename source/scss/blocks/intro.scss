@@ -25,7 +25,7 @@
 
 .intro__title {
   margin: 0;
-  max-width: 102rem;
+  max-width: 99rem;
   text-transform: uppercase;
   font-family: $font-alt;
   font-weight: 400;
@@ -33,22 +33,14 @@
   line-height: 0.906;
   letter-spacing: -0.04em;
 
-  & .text__word span {
-    padding-top: 0.18em;
-  }
-
-  &.active .text__word > span {
-    transform: translate3d(0, 0, 0);
-  }
-
   @media (min-width: $stop-scaling) {
-    max-width: 1010px;
+    max-width: 990px;
     font-size: 120px;
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     max-width: 100%;
-    font-size: 3.45rem;
+    font-size: 3.6rem;
   }
 
   @media (max-width: $tablet) and (orientation: landscape) {
