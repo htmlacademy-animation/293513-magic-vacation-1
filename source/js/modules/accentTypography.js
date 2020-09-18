@@ -7,7 +7,7 @@ export default class AccentTypographyBuild {
     this._classForActive = classForActive;
     this._property = property;
     this._timeOffset = 0;
-    this._step = 20;
+    this._switch = true;
 
     this.prePareText();
   }
@@ -15,8 +15,16 @@ export default class AccentTypographyBuild {
   createElement(letter) {
     const span = document.createElement(`span`);
     span.textContent = letter;
-    span.style.transition = `${this._property} ${this._timer}ms ease ${this._timeOffset}ms`;
-    this._timeOffset += this._step;
+
+    if (this._switch === true) {
+      this._timeOffset += this._TIME_SPACE;
+      this._switch = false;
+    } else {
+      this._timeOffset -= this._TIME_SPACE / 3;
+      this._switch = true;
+    }
+
+    span.style.transition = `${this._property} ${this._timer}ms ease-out ${this._timeOffset}ms`;
     return span;
   }
 
