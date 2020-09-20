@@ -18,6 +18,7 @@ export default () => {
         animateIntroDate.runAnimation();
       }, 1000);
     } else {
+      animateIntroTitle.destroyAnimation();
       animateIntroDate.destroyAnimation();
     }
   });
