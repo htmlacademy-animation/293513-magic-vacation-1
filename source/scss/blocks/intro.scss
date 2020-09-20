@@ -151,8 +151,11 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
-
-  @include fade(450ms, 1300ms);
+  animation-name: fade;
+  animation-duration: 450ms;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  animation-delay: 1300ms;
 
   @media (min-width: $stop-scaling) {
     margin: 0 0 16px;
